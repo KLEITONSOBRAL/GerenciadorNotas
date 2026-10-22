@@ -1,0 +1,40 @@
+﻿@model GerenciadorNotas.Models.Nota
+
+@{
+    ViewData["Title"] = "Excluir nota";
+}
+
+<h1>Excluir nota</h1>
+
+<div class="alert warning">
+    Tem certeza de que deseja excluir esta nota?
+</div>
+
+<p>
+    <strong>Título:</strong>
+    @Model.Titulo
+</p>
+
+<p>
+    <strong>Conteúdo:</strong>
+    @Model.Conteudo
+</p>
+
+<p>
+    <strong>Data de criação:</strong>
+    @Model.DataCriacao.ToString("dd/MM/yyyy HH:mm")
+</p>
+
+<form asp-action="Excluir" method="post" class="form-actions">
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="button danger">
+        Confirmar exclusão
+    </button>
+
+    <a asp-action="Index" class="button secondary">
+        Cancelar
+    </a>
+
+</form>

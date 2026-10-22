@@ -1,0 +1,44 @@
+﻿@model GerenciadorNotas.Models.Nota
+
+@{
+    ViewData["Title"] = "Detalhes da nota";
+}
+
+<h1>Detalhes da nota</h1>
+
+<div class="form-card">
+
+    <dl class="details">
+
+        <dt>Número</dt>
+        <dd>@Model.Id</dd>
+
+        <dt>Título</dt>
+        <dd>@Model.Titulo</dd>
+
+        <dt>Conteúdo</dt>
+        <dd>@Model.Conteudo</dd>
+
+        <dt>Data de criação</dt>
+        <dd>@Model.DataCriacao.ToString("dd/MM/yyyy HH:mm")</dd>
+
+    </dl>
+
+</div>
+
+<div class="form-actions">
+
+    <a asp-controller="Notas"
+       asp-action="Editar"
+       asp-route-id="@Model.Id"
+       class="button">
+        Editar
+    </a>
+
+    <a asp-controller="Notas"
+       asp-action="Index"
+       class="button secondary">
+        Voltar
+    </a>
+
+</div>

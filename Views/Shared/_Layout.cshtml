@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GerenciadorNotas</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a class="brand" asp-controller="Notas" asp-action="Index">Gerenciador Notas</a>
+            <a asp-controller="Notas" asp-action="Index">Notas</a>
+            <a asp-controller="Notas" asp-action="Cadastrar">Nova Nota</a>
+        </nav>
+    </header>
+
+
+        <main class="container">
+            @RenderBody()
+        </main>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>
